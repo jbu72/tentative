@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="images/Sans arrière plan.png" type="image/png">
+    <title>Association Sagesse Informatique</title>
+</head>
+<body>
+
+    <!-- <nav class="navbar">
+        <div class="logo">
+            <p><a href="index.html" class="navbar-logo">
+                <img src="images/logo ASI.png" alt="Logo Association Sagesse Informatique">
+            </a></p>
+        </div>
+        <div class="container">
+            <ul>
+                <li><a href="Index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="formations.html">Formations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav> -->
+    <nav class="navbar">
+        <div class="logo">
+            <p><a href="index.html" class="navbar-logo">
+                <img src="images/logo ASI.png" alt="Logo Association Sagesse Informatique">
+            </a></p>
+        </div>
+        <div class="hamburger" onclick="toggleMenu()">
+            ☰
+        </div>
+        <div class="container">
+            <ul>
+                <li><a href="Index.html">Accueil</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="formations.html">Formations</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <!-- En-tête -->
+    <header class="banner">
+        <div class="container">
+            <h1>Association Sagesse Informatique</h1>
+            <p>Promouvoir l'emploi et l'insertion socio-professionnelle des jeunes.</p>
+            <a href="formations.html" class="btn">Découvrir nos formations</a>
+            <a href="contact.html" class="btn btn-secondary">Nous contacter</a>
+            <!-- <a href="about.html" class="btn btn-primary">À propos</a> -->
+        </div>
+    </header>
+
+    <!-- Section À la une -->
+    <!-- <section class="featured">
+        <div class="container">
+            <h2>Nos formations à venir</h2>
+            <p>Participez à nos sessions sur les outils bureautiques, l'informatique, et bien plus encore !</p>
+            <ul class="highlights">
+                <li>
+                    <h3>Bureautique (Word, Excel, PowerPoint)</h3>
+                    <p>Dates : 15 - 30 janvier 2025</p>
+                </li>
+                <li>
+                    <h3>Initiation à l'informatique</h3>
+                    <p>Dates : 5 - 20 février 2025</p>
+                </li>
+            </ul>
+        </div>
+    </section> -->
+
+    <section class="featured">
+        <div class="container">
+            <h2>Nos formations à venir</h2>
+            <p>Participez à nos sessions sur les outils bureautiques, l'informatique, et bien plus encore !</p>
+            <div class="cards">
+                <!-- Card 1 -->
+                <div class="card">
+                    <img src="images/banner.png" alt="Formation Bureautique">
+                    <div class="card-content">
+                        <h3>Bureautique (Word, Excel, PowerPoint)</h3>
+                        <p>Dates : 15 - 30 janvier 2025</p>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="card">
+                    <img src="images/Designer.png" alt="Initiation à la culture hors sol">
+                    <div class="card-content">
+                        <h3>Initiation à l'informatique</h3>
+                        <p>Dates : 5 - 20 février 2025</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section chiffres clés -->
+    <!-- <section class="stats">
+        <div class="container">
+            <h2>Notre impact en chiffres</h2>
+            <div class="stats-grid">
+                <div>
+                    <h3>500+</h3>
+                    <p>Jeunes formés</p>
+                </div>
+                <div>
+                    <h3>15+</h3>
+                    <p>Partenaires engagés</p>
+                </div>
+                <div>
+                    <h3>5 ans</h3>
+                    <p>D'expérience</p>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section class="stats">
+        <div class="container">
+            <h2>Notre impact en chiffres</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="icon">
+                        <img src="images/Designer_jeunes_formés.png" alt="Jeunes formés">
+                    </div>
+                    <h3 class="counter" data-target="500">0</h3>
+                    <p>Jeunes formés</p>
+                </div>
+                <div class="stat-card">
+                    <div class="icon">
+                        <img src="images/Designer_parteanaires.png" alt="Partenaires engagés">
+                    </div>
+                    <h3 class="counter" data-target="15">0</h3>
+                    <p>Partenaires engagés</p>
+                </div>
+                <div class="stat-card">
+                    <div class="icon">
+                        <img src="images/Designer_expérience.png" alt="Années d'expérience">
+                    </div>
+                    <h3 class="counter" data-target="5">0</h3>
+                    <p>Années D'expérience</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+        <!-- Pied de page -->
+        <footer>
+            <div class="container">
+                <p>&copy; 2025 Association Sagesse Informatique. Tous droits réservés.</p>
+                <p>
+                    <a href="https://www.facebook.com" target="_blank">Facebook</a> |
+                    <a href="https://www.linkedin.com" target="_blank">LinkedIn</a> |
+                    <a href="contact.html">Contact</a>
+                </p>
+            </div>
+        </footer>
+    
+        <!-- Script JavaScript -->
+        <script src="js/script.js"></script>
+    </body>
+    </html>
+    

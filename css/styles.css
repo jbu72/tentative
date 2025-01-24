@@ -1,0 +1,757 @@
+/* Style global */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f4f4f9;
+}
+
+/* En-tête */
+/* .banner {
+    background: #007bff;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+} */
+
+.banner {
+    background: #007bff; /* Couleur de fond */
+    color: #fff; /* Couleur du texte */
+    padding: 2rem 0; /* Espacement intérieur */
+    text-align: center; /* Centrer le contenu */
+    border: 5px solid #ffdd57; /* Couleur et taille du contour */
+    border-radius: 10px; /* Optionnel : arrondir les coins du contour */
+}
+
+.banner h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+.banner p {
+    margin: 1rem 0;
+}
+.banner .btn {
+    display: inline-block;
+    margin: 0.5rem;
+    padding: 0.8rem 1.5rem;
+    color: #007bff;
+    background: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.banner .btn-secondary {
+    background: #ffdd57;
+    color: #333;
+}
+
+.banner .btn-primary {
+    background: #08ee41;
+    color: #333;
+}
+
+/* Section À la une */
+/* .featured {
+    background: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+.featured h2 {
+    color: #007bff;
+}
+.featured ul {
+    list-style: none;
+    padding: 0;
+}
+.featured li {
+    margin: 1rem 0;
+} */
+
+/* Section Featured */
+.featured {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.featured h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.featured p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #666;
+}
+
+/* Container for Cards */
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Card Style */
+.card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Card Image */
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+/* Card Content */
+.card-content {
+    padding: 20px;
+    text-align: left;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+
+.card-content p {
+    font-size: 1rem;
+    color: #555;
+}
+
+
+/* Section chiffres clés */
+.stats {
+    background: #f9f9f9;
+    padding: 2rem 0;
+    text-align: center;
+}
+.stats-grid {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.stats-grid div {
+    margin: 1rem;
+}
+.stats-grid h3 {
+    color: #007bff;
+}
+
+/* Pied de page */
+footer {
+    background: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem 0;
+}
+footer a {
+    color: #ffdd57;
+    text-decoration: none;
+    margin: 0 0.5rem;
+}
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Transitions générales */
+section {
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+/* Boutons interactifs */
+.btn {
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Bannière de la page À propos */
+.banner-about {
+    background: #007bff; 
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Section mission */
+.mission {
+    padding: 2rem 0;
+    background: #f4f4f9;
+    text-align: center;
+}
+.mission h2 {
+    color: #007bff;
+}
+
+/* Section valeurs */
+.values {
+    padding: 2rem 0;
+    background: #fff;
+    text-align: left;
+}
+.values ul {
+    list-style: none;
+    padding: 0;
+}
+.values li {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-left: 5px solid #007bff;
+}
+
+/* Section histoire */
+.history {
+    padding: 2rem 0;
+    background: #f4f4f9;
+    text-align: center;
+}
+
+/* Barre de navigation */
+/* .navbar {
+    background: #007bff;
+    color: #fff;
+    padding: 0.5rem 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+} */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #007bff;
+    height: 60px;
+    padding: 0 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    border: 5px solid #ffdd57; /* Couleur et taille du contour */
+    border-radius: 10px; /* Optionnel : arrondir les coins du contour */
+    box-shadow: 0 2px 5px rgba(240, 166, 7, 0.1);
+}
+
+/* Logo */
+.navbar-logo img {
+    width: 50px; /* Taille du logo */
+    height: auto;
+    display: block;
+    border-radius: 50%;
+}
+
+/* Conteneur des liens */
+.navbar .container ul {
+    list-style: none;
+    display: flex; /* Liens alignés horizontalement */
+    gap: 20px; /* Espacement entre les liens */
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .container ul li {
+    display: inline;
+}
+
+.navbar .container ul li a {
+    text-decoration: none;
+    color: #fff; /* Couleur des liens */
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 15px; /* Espacement intérieur */
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar .container ul li a:hover {
+    background-color: #ffdd57; /* Couleur de survol */
+    color: #333; /* Couleur du texte au survol */
+    border-radius: 5px;
+}
+
+/* Espacement pour le contenu en dessous de la navbar */
+body {
+    margin-top: 60px; /* Ajustez selon la hauteur de la navbar */
+}
+
+/* Menu hamburger caché par défaut */
+.hamburger {
+    display: none; /* Masqué sur les grands écrans */
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+}
+
+/* Responsive : Tablette et mobile */
+@media (max-width: 768px) {
+    /* Menu hamburger visible */
+    .hamburger {
+        display: block;
+    }
+
+    /* Cache les liens par défaut */
+    .navbar .container ul {
+        display: none;
+        flex-direction: column; /* Les liens s'empilent en colonne */
+        position: absolute;
+        top: 100%; /* En-dessous de la navbar */
+        left: 0;
+        background: #007bff;
+        width: 100%; /* Prend toute la largeur */
+        padding: 10px 0;
+    }
+
+    /* Affiche les liens quand le menu est activé */
+    .navbar .container ul.active {
+        display: flex;
+    }
+
+    .navbar .container ul li {
+        text-align: center;
+    }
+}
+
+/* Responsive : Mobile */
+@media (max-width: 480px) {
+    .navbar-logo img {
+        width: 40px; /* Réduit la taille du logo */
+    }
+
+    .navbar .container ul li a {
+        font-size: 14px; /* Réduit la taille du texte */
+        padding: 10px;
+    }
+}
+
+/* Bannière de la page Formations */
+.banner-formations {
+    background: #007bff;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+
+/* Section Formations */
+.formations {
+    padding: 2rem 0;
+    background: #f9f9f9;
+}
+.formations h2 {
+    text-align: center;
+    color: #007bff;
+    margin-bottom: 1.5rem;
+}
+.formation-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+}
+.formation-item {
+    background: #fff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: calc(33% - 1rem);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.formation-item h3 {
+    color: #007bff;
+    margin-bottom: 0.5rem;
+}
+.formation-item p {
+    margin: 0.5rem 0;
+}
+.formation-item .btn {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.formation-item .btn:hover {
+    background: #0056b3;
+}
+
+/* Bannière de la page Contact */
+.banner-contact {
+    background: #007bff;
+    color: #fff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* Section formulaire */
+/* Section contact */
+.contact-form {
+    padding: 40px 20px; /* Espacement intérieur */
+    background-color: #f9f9f9; /* Couleur de fond douce */
+    text-align: center;
+}
+
+.contact-form h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Style global du formulaire */
+.contact-form form {
+    max-width: 600px; /* Largeur maximale du formulaire */
+    margin: 0 auto; /* Centrage horizontal */
+    background: #fff; /* Fond blanc */
+    padding: 20px;
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Effet d'ombre */
+    text-align: left; /* Alignement du texte */
+}
+
+/* Champs du formulaire */
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block; /* Le label prend toute la largeur */
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%; /* Champs prennent toute la largeur */
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box; /* Inclut le padding dans la largeur */
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007bff; /* Bordure bleue au focus */
+}
+
+/* Bouton d'envoi */
+.contact-form button {
+    width: 100%; /* Bouton prend toute la largeur */
+    padding: 10px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056b3; /* Changement de couleur au survol */
+}
+
+/* Responsivité pour les petits écrans */
+@media (max-width: 768px) {
+    .contact-form form {
+        padding: 15px; /* Réduction des marges internes */
+    }
+
+    .contact-form h2 {
+        font-size: 1.8rem; /* Réduction de la taille du titre */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.9rem; /* Taille du texte réduite */
+    }
+
+    .contact-form button {
+        font-size: 0.9rem; /* Taille du bouton ajustée */
+        padding: 10px; /* Réduction du padding */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-form h2 {
+        font-size: 1.5rem; /* Taille du titre réduite davantage */
+    }
+
+    .contact-form form {
+        padding: 10px; /* Padding encore réduit */
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 0.8rem; /* Plus petit texte pour les très petits écrans */
+    }
+
+    .contact-form button {
+        font-size: 0.8rem;
+        padding: 8px; /* Taille réduite du bouton */
+    }
+}
+
+
+/* Section informations de contact */
+.contact-info {
+    padding: 2rem 0;
+    text-align: center;
+    background: #fff;
+}
+.contact-info p {
+    margin: 0.5rem 0;
+}
+
+/* Section carte */
+.contact-map iframe {
+    border: 0;
+    width: 100%;
+    height: 300px;
+}
+
+/* Effet de survol pour les liens de navigation */
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar a:hover {
+    background-color: #ffdd57; /* Couleur de survol */
+    color: #333; /* Couleur du texte au survol */
+    border-radius: 5px; /* Optionnel : pour un effet arrondi */
+}
+
+/* Mise en page générale pour la réactivité */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Barre de navigation : Réorganisation sur petits écrans */
+.navbar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.navbar li {
+    margin: 0.5rem;
+}
+
+/* Section liste des formations */
+.formation-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.formation-item {
+    width: calc(100% - 2rem); /* Par défaut, prend toute la largeur */
+}
+
+/* Section stats */
+.stats-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.stats-grid div {
+    flex: 1 1 calc(33% - 2rem); /* 3 colonnes sur grands écrans */
+    text-align: center;
+}
+
+/* Formulaire de contact */
+.contact-form form {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Pied de page */
+footer {
+    padding: 1rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+/* Media queries pour écrans plus petits */
+@media (max-width: 768px) {
+    /* Navigation */
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Formations : Une seule colonne */
+    .formation-item {
+        width: 100%;
+    }
+
+    /* Stats : Deux colonnes */
+    .stats-grid div {
+        flex: 1 1 calc(50% - 1rem);
+    }
+}
+
+@media (max-width: 480px) {
+    /* Stats : Une seule colonne */
+    .stats-grid div {
+        flex: 1 1 100%;
+    }
+}
+
+.stats {
+    background: #f9f9f9;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.stats h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+.stats-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stat-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.stat-card .icon {
+    margin-bottom: 20px;
+}
+
+/* .stat-card .icon img {
+    width: 50px;
+    height: 50px;
+} */
+
+.stat-card .icon img {
+    width: 200px; /* Ajustez cette valeur pour la taille souhaitée */
+    height: 200px; /* Ajustez cette valeur pour la taille souhaitée */
+    object-fit: contain; /* Garantit que l'image reste bien proportionnée */
+    border-radius: 10px; /* Optionnel : ajoute un effet d'arrondi si nécessaire */
+    margin: auto; /* Centre l'image dans son conteneur */
+    display: block;
+}
+
+.stat-card h3 {
+    font-size: 2.5rem;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.stat-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.counter {
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.testimonials {
+    padding: 50px 0;
+    background-color: #f9f9f9; /* Couleur de fond douce */
+    text-align: center;
+}
+
+.testimonials h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adaptable à la taille de l'écran */
+    gap: 20px;
+}
+
+.testimonial-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px); /* Effet de survol */
+}
+
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Rend les images circulaires */
+    margin-bottom: 15px;
+}
+
+.testimonial-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.testimonial-card p {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.5;
+}
+
