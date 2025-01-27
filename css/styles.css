@@ -21,7 +21,7 @@ body {
     color: #fff; /* Couleur du texte */
     padding: 2rem 0; /* Espacement intérieur */
     text-align: center; /* Centrer le contenu */
-    border: 5px solid #ffdd57; /* Couleur et taille du contour */
+    /* border: 5px solid #ffdd57; Couleur et taille du contour */
     border-radius: 10px; /* Optionnel : arrondir les coins du contour */
 }
 
@@ -50,23 +50,6 @@ body {
     background: #08ee41;
     color: #333;
 }
-
-/* Section À la une */
-/* .featured {
-    background: #fff;
-    padding: 2rem 0;
-    text-align: center;
-}
-.featured h2 {
-    color: #007bff;
-}
-.featured ul {
-    list-style: none;
-    padding: 0;
-}
-.featured li {
-    margin: 1rem 0;
-} */
 
 /* Section Featured */
 .featured {
@@ -142,6 +125,19 @@ body {
     padding: 2rem 0;
     text-align: center;
 }
+
+.stats {
+    opacity: 0; /* Masque la section au début */
+    transform: translateY(20px); /* Légèrement en dehors de la vue */
+    transition: all 0.6s ease-out; /* Animation fluide */
+}
+
+.stats.visible {
+    opacity: 1; /* Rendre visible */
+    transform: translateY(0); /* Ramener à la position normale */
+}
+
+
 .stats-grid {
     display: flex;
     justify-content: space-around;
@@ -171,10 +167,11 @@ footer a:hover {
 }
 
 /* Transitions générales */
-section {
-    opacity: 0;
-    transform: translateY(20px);
-}
+    section {
+        opacity: 1; /* Le contenu est immédiatement visible */
+        transform: none; /* Pas de décalage vertical */
+        transition: none; /* Supprime les transitions inutiles */
+    }
 
 /* Boutons interactifs */
 .btn {
@@ -239,7 +236,7 @@ section {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #007bff;
+    background-color: #333;
     height: 60px;
     padding: 0 10%;
     position: fixed;
@@ -247,9 +244,9 @@ section {
     left: 0;
     right: 0;
     z-index: 10;
-    border: 5px solid #ffdd57; /* Couleur et taille du contour */
+    /* border: 5px solid #ffdd57; Couleur et taille du contour */
     border-radius: 10px; /* Optionnel : arrondir les coins du contour */
-    box-shadow: 0 2px 5px rgba(240, 166, 7, 0.1);
+    box-shadow: 0 2px 5px rgba(230, 222, 205, 0.1);
 }
 
 /* Logo */
@@ -257,7 +254,17 @@ section {
     width: 50px; /* Taille du logo */
     height: auto;
     display: block;
-    border-radius: 50%;
+    border-radius: 50%; 
+}
+.navbar-logo {
+    text-decoration: none; /* Pas de soulignement */
+    pointer-events: none; /* Désactive toute interaction avec le lien */
+    cursor: default; /* Le curseur reste neutre */
+}
+
+.navbar-logo:hover {
+    background: none; /* Pas de changement de fond au survol */
+    color: inherit; /* Pas de changement de couleur */
 }
 
 /* Conteneur des liens */
@@ -299,6 +306,7 @@ body {
     cursor: pointer;
     font-size: 24px;
     color: #fff;
+    margin-left: 150px; /* L'icône est poussée complètement à droite */
 }
 
 /* Responsive : Tablette et mobile */
@@ -518,14 +526,138 @@ body {
 
 
 /* Section informations de contact */
-.contact-info {
+/* .contact-info {
     padding: 2rem 0;
     text-align: center;
     background: #fff;
 }
 .contact-info p {
     margin: 0.5rem 0;
+} */
+
+.contact-info {
+    background-color: #f9f9f9; /* Couleur douce de fond */
+    padding: 40px 20px; /* Espacement autour */
+    text-align: center;
+    border-radius: 10px; /* Coins arrondis */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Ombre légère */
 }
+
+.contact-info h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacement entre l'icône et le texte */
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.contact-info i {
+    font-size: 1.5rem; /* Taille des icônes */
+    color: #007bff; /* Couleur des icônes */
+}
+
+/* Section contact-info : structure globale */
+.contact-info {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info h2 {
+    font-size: 2rem;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Liste des coordonnées */
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.contact-info li {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrer les icônes et le texte */
+    gap: 10px; /* Espacement entre l’icône et le texte */
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Icônes */
+.contact-info i {
+    font-size: 1.5rem;
+    color: #007bff;
+}
+
+/* Texte des coordonnées */
+.contact-info span {
+    flex: 1;
+    text-align: left;
+}
+
+/* Responsivité : Tablettes et mobiles */
+@media (max-width: 768px) {
+    .contact-info {
+        padding: 30px 15px; /* Réduit le padding */
+    }
+
+    .contact-info h2 {
+        font-size: 1.8rem; /* Réduit légèrement la taille du titre */
+    }
+
+    .contact-info li {
+        font-size: 1rem; /* Texte plus petit pour s’adapter à l’espace réduit */
+    }
+
+    .contact-info i {
+        font-size: 1.3rem; /* Réduit la taille des icônes */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info {
+        padding: 20px 10px; /* Padding réduit pour mobiles */
+    }
+
+    .contact-info h2 {
+        font-size: 1.5rem; /* Taille du titre encore réduite */
+    }
+
+    .contact-info li {
+        flex-direction: column; /* Icône et texte empilés */
+        align-items: flex-start; /* Aligne les éléments à gauche */
+        gap: 5px; /* Réduction de l’espace entre les éléments */
+        font-size: 0.9rem; /* Réduction du texte */
+    }
+
+    .contact-info i {
+        font-size: 1.2rem; /* Taille des icônes réduite davantage */
+    }
+
+    .contact-info span {
+        text-align: left; /* Le texte reste aligné à gauche */
+    }
+}
+
 
 /* Section carte */
 .contact-map iframe {

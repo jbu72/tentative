@@ -23,21 +23,16 @@ buttons.forEach((button) => {
     });
 });
 
-// Révélation des sections au défilement
-const sections = document.querySelectorAll("section");
-window.addEventListener("scroll", () => {
-    const triggerBottom = window.innerHeight / 1.2;
-
+// Révélation des sections au défilement corrigé
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
     sections.forEach((section) => {
-        const sectionTop = section.getBoundingClientRect().top;
-
-        if (sectionTop < triggerBottom) {
-            section.style.opacity = "1";
-            section.style.transform = "translateY(0)";
-            section.style.transition = "all 0.8s ease-in-out";
-        }
+        section.style.opacity = "1";
+        section.style.transform = "translateY(0)";
+        section.style.transition = "none"; // Pas d'animation
     });
 });
+
 
 // Défilement fluide vers les sections
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -86,24 +81,77 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+// document.addEventListener("DOMContentLoaded", () => {
+//     const counters = document.querySelectorAll(".counter");
+//     counters.forEach((counter) => {
+//         const updateCounter = () => {
+//             const target = +counter.getAttribute("data-target");
+//             const count = +counter.innerText;
+//             const increment = target / 200;
+
+//             if (count < target) {
+//                 counter.innerText = Math.ceil(count + increment);
+//                 setTimeout(updateCounter, 10);
+//             } else {
+//                 counter.innerText = target;
+//             }
+//         };
+//         updateCounter();
+//     });
+// });
+
 document.addEventListener("DOMContentLoaded", () => {
     const counters = document.querySelectorAll(".counter");
-    counters.forEach((counter) => {
-        const updateCounter = () => {
-            const target = +counter.getAttribute("data-target");
-            const count = +counter.innerText;
-            const increment = target / 200;
+    const statsSection = document.querySelector(".stats");
 
-            if (count < target) {
-                counter.innerText = Math.ceil(count + increment);
-                setTimeout(updateCounter, 10);
-            } else {
-                counter.innerText = target;
+    // Fonction pour démarrer l'animation du compteur
+    const startCounters = () => {
+        counters.forEach((counter) => {
+            const target = +counter.getAttribute("data-target");
+            const updateCounter = () => {
+                const count = +counter.innerText;
+                const increment = target / 200;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(updateCounter, 10);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCounter();
+        });
+    };
+
+    // Utilisation de l'IntersectionObserver
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                startCounters(); // Démarre les compteurs
+                observer.unobserve(statsSection); // Arrête d'observer après l'animation
             }
-        };
-        updateCounter();
+        });
+    }, {
+        threshold: 0.5, // Déclenche lorsque 50 % de la section est visible
     });
+
+    observer.observe(statsSection);
 });
+
+const statsSection = document.querySelector(".stats");
+
+const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            statsSection.classList.add("visible"); // Ajoute la classe pour l'animation
+            startCounters();
+            observer.unobserve(statsSection);
+        }
+    });
+}, {
+    threshold: 0.5,
+});
+
 
 function toggleMenu() {
     const navbarLinks = document.querySelector(".navbar .container ul");
