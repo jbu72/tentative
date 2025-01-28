@@ -100,11 +100,63 @@ document.addEventListener("DOMContentLoaded", () => {
 //     });
 // });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const counters = document.querySelectorAll(".counter");
-    const statsSection = document.querySelector(".stats");
+// document.addEventListener("DOMContentLoaded", () => {
+//     const counters = document.querySelectorAll(".counter");
+//     const statsSection = document.querySelector(".stats");
 
-    // Fonction pour démarrer l'animation du compteur
+//     // Fonction pour démarrer l'animation du compteur
+//     const startCounters = () => {
+//         counters.forEach((counter) => {
+//             const target = +counter.getAttribute("data-target");
+//             const updateCounter = () => {
+//                 const count = +counter.innerText;
+//                 const increment = target / 200;
+
+//                 if (count < target) {
+//                     counter.innerText = Math.ceil(count + increment);
+//                     setTimeout(updateCounter, 10);
+//                 } else {
+//                     counter.innerText = target;
+//                 }
+//             };
+//             updateCounter();
+//         });
+//     };
+
+//     // Utilisation de l'IntersectionObserver
+//     const observer = new IntersectionObserver((entries, observer) => {
+//         entries.forEach((entry) => {
+//             if (entry.isIntersecting) {
+//                 startCounters(); // Démarre les compteurs
+//                 observer.unobserve(statsSection); // Arrête d'observer après l'animation
+//             }
+//         });
+//     }, {
+//         threshold: 0.5, // Déclenche lorsque 50 % de la section est visible
+//     });
+
+//     observer.observe(statsSection);
+// });
+
+// const statsSection = document.querySelector(".stats");
+
+// const observer = new IntersectionObserver((entries, observer) => {
+//     entries.forEach((entry) => {
+//         if (entry.isIntersecting) {
+//             statsSection.classList.add("visible"); // Ajoute la classe pour l'animation
+//             startCounters();
+//             observer.unobserve(statsSection);
+//         }
+//     });
+// }, {
+//     threshold: 0.5,
+// });
+
+document.addEventListener("DOMContentLoaded", () => {
+    const statsSection = document.querySelector(".stats");
+    const counters = document.querySelectorAll(".counter");
+
+    // Fonction pour démarrer les compteurs
     const startCounters = () => {
         counters.forEach((counter) => {
             const target = +counter.getAttribute("data-target");
@@ -123,33 +175,23 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    // Utilisation de l'IntersectionObserver
-    const observer = new IntersectionObserver((entries, observer) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                startCounters(); // Démarre les compteurs
-                observer.unobserve(statsSection); // Arrête d'observer après l'animation
-            }
-        });
-    }, {
-        threshold: 0.5, // Déclenche lorsque 50 % de la section est visible
-    });
-
-    observer.observe(statsSection);
-});
-
-const statsSection = document.querySelector(".stats");
-
-const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-            statsSection.classList.add("visible"); // Ajoute la classe pour l'animation
-            startCounters();
-            observer.unobserve(statsSection);
+    // IntersectionObserver pour déclencher l'animation au moment opportun
+    const observer = new IntersectionObserver(
+        (entries, observer) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    startCounters(); // Démarre les compteurs
+                    observer.unobserve(statsSection); // Arrête d'observer après l'animation
+                }
+            });
+        },
+        {
+            threshold: 0.2, // Déclenche même si seulement 20 % de la section est visible
         }
-    });
-}, {
-    threshold: 0.5,
+    );
+
+    // Observer la section des statistiques
+    observer.observe(statsSection);
 });
 
 
