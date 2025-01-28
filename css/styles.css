@@ -245,7 +245,7 @@ footer a:hover {
     right: 0;
     z-index: 10;
     /* border: 5px solid #ffdd57; Couleur et taille du contour */
-    border-radius: 10px; /* Optionnel : arrondir les coins du contour */
+    /* border-radius: 10px; Optionnel : arrondir les coins du contour */
     box-shadow: 0 2px 5px rgba(230, 222, 205, 0.1);
 }
 
