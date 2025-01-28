@@ -22,7 +22,7 @@ body {
     padding: 2rem 0; /* Espacement intérieur */
     text-align: center; /* Centrer le contenu */
     /* border: 5px solid #ffdd57; Couleur et taille du contour */
-    border-radius: 10px; /* Optionnel : arrondir les coins du contour */
+    /* border-radius: 10px; Optionnel : arrondir les coins du contour */
 }
 
 .banner h1 {
